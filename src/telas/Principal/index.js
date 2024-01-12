@@ -7,6 +7,7 @@ import soniaFoto from "../../assets/sonia.png";
 import pacientes from "./pacientes";
 import styles from "./styles";
 import { CardConsultaShimmerEffect } from "../../componentes/CardConsultaShimerEffect";
+import { InformacoesUsuarioShimerEffect } from "../../componentes/InformacoesUsuarioShimerEffect";
 
 export default function Principal({ navigation }) {
 
@@ -21,11 +22,16 @@ export default function Principal({ navigation }) {
   return (
     <TelaDeFundo>
     <View style={styles.container}>
-      <InformacoesUsuario 
+      { 
+      tempo
+        ? <InformacoesUsuario 
         nome="Olá Sônia"
         detalhes="Mais 4 consultas hoje"
         foto={soniaFoto}
       />
+      : <InformacoesUsuarioShimerEffect />
+      
+      }
 
       <Text style={styles.texto}>Hoje</Text>
 
